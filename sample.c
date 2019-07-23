@@ -1,6 +1,10 @@
 #include<stdio.h>
 int main()
 {
-printf("hello world");
-return 0;
+    int op1, op2;
+    scanf("Enter first operand: %d", &op1);
+    scanf("Enter second operand: %d", &op2);
+
+    printf("sum is = %d", op1+op2);
+    return 0;
 }
