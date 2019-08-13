@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-"a"
-
-=======
 #include<stdio.h>
 int main()
 {
@@ -12,4 +8,3 @@ int main()
     printf("sum is = %d", op1+op2);
     return 0;
 }
->>>>>>> 1e595a652c67e421496454905a8a4ecb6188389a
