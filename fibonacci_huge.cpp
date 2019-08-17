@@ -1,6 +1,9 @@
 #include <iostream>
+#include <algorithm>
 
-long long get_fibonacci_huge_naive(long long n, long long m) {
+using namespace std;
+
+long long get_fibonacci_huge_naive(long long n) {
     if (n <= 1)
         return n;
 
@@ -13,10 +16,10 @@ long long get_fibonacci_huge_naive(long long n, long long m) {
         current = tmp_previous + current;
     }
 
-    return current % m;
+    return current % 10;
 }
 
-long long get_fibonacci_huge_fast(long long n, long long m) {
+long long get_fibonacci_huge_fast(long long n) {
     if ( n <= 1 )
         return n;
     long long prev = 0;
@@ -25,14 +28,35 @@ long long get_fibonacci_huge_fast(long long n, long long m) {
     for( long long i = 0; i < n-1; ++i) {
         long long tmp_prev = prev;
         prev = curr;
-        curr = (tmp_prev + curr) % m;
+        curr = (tmp_prev + curr) % 10;
      }
      return curr;
 }
 
 int main() {
-    long long n, m;
-    std::cin >> n >> m;
-    std::cout << get_fibonacci_huge_naive(n, m) << '\n';
-    std::cout << get_fibonacci_huge_fast(n, m) << '\n';
+    
+    while(true)
+    {
+        long long  n;
+        n = rand() % 10000 + 1;
+        
+        long long r1, r2;
+        r1= get_fibonacci_huge_naive(n);
+        r2= get_fibonacci_huge_naive(n);
+
+        if(r1 != r2)
+        {
+            cout<<"\t\tError\nr1 = "<< r1 <<"\tr2 = "<< r2 << '\n';
+        }
+        else
+        {
+            cout<<"=============================\n\t\tOkay\n";
+        }
+    }
+
+    long long n;
+
+    std::cin >> n;
+    std::cout << get_fibonacci_huge_naive(n) << '\n';
+    std::cout << get_fibonacci_huge_fast(n) << '\n';
 }
