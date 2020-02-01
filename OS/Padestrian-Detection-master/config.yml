@@ -1,0 +1,12 @@
+# -*- coding: utf-8 -*-
+
+#@author: Ankit Singh
+Main: 
+    Input:
+        positive: 'Input\pos\'
+        Negative: 'Input\neg\'       
+    Output: 'Output\'
+
+FileType: 
+- png
+- ppm
