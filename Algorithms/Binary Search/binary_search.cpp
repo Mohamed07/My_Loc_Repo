@@ -15,7 +15,7 @@ int binary_search(const vector<long int> &a, int x) {
     //std::cout << "(" << left << ", " << right << "), mid = " << mid <<'\n';
     if(a[mid] == x)
     {
-      //found = true;
+      found = true;
       return mid;
     }
     else if (a[mid] < x)
