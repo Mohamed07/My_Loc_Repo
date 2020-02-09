@@ -6,6 +6,8 @@ using namespace std;
 
 void swap(int & a, int & b)
 {
+    if( a == b)
+        return;
     a += b;
     b = a - b;
     a -= b;
@@ -13,18 +15,16 @@ void swap(int & a, int & b)
 
 void selection_sort(vector<int> & vec)
 {
-    int min = vec[0];
+    int min = 0;
     for(int i=0; i < vec.size(); i++)
     {
-        min = vec[i];
+        min = i;
         for(int j=i+1; j < vec.size(); j++)
         {
-            if(vec[j] < min)
-            {
-                min = vec[j];
-                swap(vec[i], vec[j]);
-            }
+            if(vec[j] < vec[min])
+                min = j;
         }
+        swap(vec[i], vec[min]);
     }
 
 }
