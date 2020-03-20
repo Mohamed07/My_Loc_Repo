@@ -44,9 +44,9 @@ int get_major_elem(vector<long int> &a, int left, int right, int LSM, int RSM) {
   }
   else
   {
-    int len = right - left;
+    int len = (right - left) + 1;
     int lsm_c = 0, rsm_c = 0;
-    for(int i = left; i < right; i++)
+    for(int i = left; i <= right; i++)
     {
       if(a[i] == LSM)
         lsm_c += 1;
@@ -89,5 +89,5 @@ int main() {
   for (size_t i = 0; i < a.size(); ++i) {
     std::cin >> a[i];
   }
-  std::cout << (get_majority_element_r(a, 0, a.size()) != -1) << '\n';
+  std::cout << (get_majority_element_r(a, 0, a.size()-1) != -1) << '\n';
 }
